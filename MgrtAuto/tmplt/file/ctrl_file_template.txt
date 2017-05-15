@@ -1,0 +1,45 @@
+{#IMPORTPARAMS}
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE IMPORTPARAMS SYSTEM "$impctrl">
+<IMPORTPARAMS CHECKIN_AFTER_IMPORT ="$checkin_flag"
+ CHECKIN_COMMENTS ="$checkin_comments"
+ RETAIN_GENERATED_VALUE ="$retain_flag">
+$Contents_Folder_Map
+$Contents_Resolve_Conflicts
+</IMPORTPARAMS>
+{#}
+
+{#FOLDERMAP}
+<FOLDERMAP SOURCEFOLDERNAME ="$map_folder"
+ SOURCEREPOSITORYNAME ="$src_repo" 
+ TARGETFOLDERNAME ="$map_folder"
+ TARGETREPOSITORYNAME ="$tgt_repo"/>
+{#}
+
+{#RESOLVECONFLICT}
+<RESOLVECONFLICT>
+$Contents_Specific_Objects
+	<TYPEOBJECT 
+	 OBJECTTYPENAME ="ALL"
+	 RESOLUTION ="REUSE"/>
+</RESOLVECONFLICT>
+{#}
+
+{#SPECIFICOBJECT}
+<SPECIFICOBJECT 
+ NAME ="$obj_name"
+ OBJECTTYPENAME ="$obj_type"
+ FOLDERNAME ="$obj_folder"
+ REPOSITORYNAME ="$obj_repo"
+ RESOLUTION ="REPLACE"/>
+{#}
+
+{#SOURCE}
+<SPECIFICOBJECT 
+ NAME ="$obj_name"
+ OBJECTTYPENAME ="$obj_type"
+ DBDNAME="$dbd"
+ FOLDERNAME ="$obj_folder"
+ REPOSITORYNAME ="$obj_repo"
+ RESOLUTION ="REPLACE"/>
+{#}
